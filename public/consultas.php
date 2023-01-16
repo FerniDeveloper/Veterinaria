@@ -92,10 +92,10 @@ $db = conecta();
                       <td><a href="javascript:void(0)" data-toggle="modal" data-target="#modalPro" type="button" onclick="dataModalConsulta('<?=$row['idB']?>','<?=$row['fecha']?>','<?=$row['paciente']?>','<?=$row['edadmeses']?>','<?=$row['motivos']?>','<?=$row['padecimientos']?>','<?=$row['observ']?>','<?=$row['medicamento']?>')"><i class="icon-copy fa fa-pencil-square-o" aria-hidden="true"></i></a> | <a href="javascript:void(0)" onclick="delConsulta('<?=$row['idB']?>')"><i class="icon-copy fa fa-trash-o" aria-hidden="true"></i></a></td>
                     </tr>
                   
-              <?php
+                <?php
+                }
               }
-            }
-            ?>
+              ?>
             </tbody>
           </table>
         </div>
@@ -185,6 +185,7 @@ $db = conecta();
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" onclick="generatePDF()" class="btn btn-success">Imprimir</button>
           <button type="button" class="btn save btn-primary">Guardar</button>
         </div>
       </div>
@@ -227,8 +228,8 @@ $db = conecta();
 						</div>
 						<div class="col-md-12 col-sm-12">
 							<div class="form-group">
-								<label id="concL">Miligramos</label>
-								<input id="conc" type="text" value="" name="demo1">
+								<label id="concL">Miligramos (concentrado del producto)</label>
+								<input id="conc" type="text" value="" name="demo3">
 							</div>
 						</div>
             <div class="col-md-12 col-sm-12">
@@ -256,13 +257,15 @@ $db = conecta();
   <script src="src/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
   <script src="src/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
   <script src="vendors/scripts/advanced-components.js"></script>
+  <script src="assets/js/jspdf.min.js"></script>
+  <script src="assets/js/medical.js"></script>
 
   <script type="text/javascript">
     var mm = "mg.";
     function cambiaM(k,p,m) {
       mm = k+".";
-      $('#dosisL').html('('+k+'/'+p+')');
-      $('#concL').html(m);
+      $('#dosisL').html('('+k+'./kg.)');
+      $('#concL').html(m+' (concentrado del producto)');
     }
   
    function calcDosis() {

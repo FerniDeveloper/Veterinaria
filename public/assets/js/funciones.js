@@ -515,11 +515,12 @@ function dataModalConsulta(id,fecha,paciente,edad,motivos,pade,observ,medi) {
   $('#fecha').val(fecha);
   $('#paciente').val(paciente);
   $('#paciente').change();
-  $('#motivo').val(motivos);
-  $('#pade').val(pade);
-  $('#observ').val(observ);
-  $('#medi').val(medi);
   $('#edad').val(edad);
+
+  $('#motivo').val(motivos.replaceAll("<br>","\r\n"));
+  $('#pade').val(pade.replaceAll("<br>","\r\n"));
+  $('#observ').val(observ.replaceAll("<br>","\r\n"));
+  $('#medi').val(medi.replaceAll("<br>","\r\n"));
   editar = id;
 }
 

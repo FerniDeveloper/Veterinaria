@@ -5,7 +5,7 @@ $db = conecta();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Proyecto Veterinaria</title>
+	<title>Veterinaria - Inicio</title>
 	<?php require("assets/include/head.php"); ?>
 </head>
 <body>
@@ -33,9 +33,8 @@ $db = conecta();
 				</div>
 			</div>
 		</div>
-		<div class="footer-wrap pd-20 mb-20 card-box">
-			Pagina para Veterinaria hecho por <a href="https://github.com/Proyecto-Veterinaria-SSPIS22A" target="_blank">Proyecto Veterinaria</a>
-		</div>
+			<?php require("assets/include/developby.php"); ?>
+
 	</div>
 	
 	<!-- js -->

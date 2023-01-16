@@ -6,10 +6,10 @@ $output = '';
 $paciente = $_POST['paciente'];
 $edad = $_POST['edad'];
 $fecha = $_POST['fecha'];
-$motivo = $_POST['motivo'];
-$pade = $_POST['pade'];
-$observ = $_POST['observ'];
-$medi = $_POST['medi'];
+$motivo = str_replace(array("\r\n","\n"),'<br>', $_POST['motivo']);
+$pade = str_replace(array("\r\n","\n"),'<br>', $_POST['pade']);
+$observ = str_replace(array("\r\n","\n"),'<br>', $_POST['observ']);
+$medi = str_replace(array("\r\n","\n"),'<br>', $_POST['medi']);
 
 $update = $_POST['editar'];
 

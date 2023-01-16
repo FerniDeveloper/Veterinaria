@@ -72,7 +72,7 @@
 					<div class="col-md-2 col-sm-12">
 						<div class="form-group">
 							<label id="concL">Miligramos</label>
-							<input id="conc" type="text" value="" name="demo1">
+							<input id="conc" type="text" value="" name="demo3">
 						</div>
 					</div>
 		            <div class="col-md-1 wrapper col-sm-12">
@@ -80,7 +80,7 @@
 		            </div>
 					<div class="col-md-2 col-sm-12">
 		              <div class="form-group">
-		                <label>Medicamento</label>
+		                <label>Medicamento (concentrado del producto)</label>
 		                <input type="text" class="form-control" id="mediCalc" name="">
 		              </div>
 		            </div>
@@ -101,8 +101,8 @@
   	var mm = "mg.";
     function cambiaM(k,p,m) {
       mm = k+".";
-      $('#dosisL').html('('+k+'/'+p+')');
-      $('#concL').html(m);
+      $('#dosisL').html('('+k+'./kg.)');
+      $('#concL').html(m+' (concentrado del producto)');
     }
   
     function calcDosis() {
